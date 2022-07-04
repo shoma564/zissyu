@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  goapp:
+    container_name: goapp
+    build:
+      dockerfile: ./build/Dockerfile
+    ports:
+      - 1323:1323
+    volumes:
+      - ./cmd/hello:/go/src/app
+    restart: always
+    tty: true
+    command: >
+      sh -c 'go get && go run main.go'
