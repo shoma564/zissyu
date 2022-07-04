@@ -4,6 +4,7 @@ services:
   goapp:
     container_name: goapp
     build:
+      context: .
       dockerfile: ./build/Dockerfile
     ports:
       - 1323:1323
