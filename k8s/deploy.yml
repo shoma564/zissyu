@@ -18,8 +18,16 @@ spec:
       - image: shomaigu/zissyu:latest
         name: zissyu
         command: ["/bin/sh","-c"]
-        args: ["go get && go run main.go"]
+        #args: ["go get && go run main.go"]
+        args: ["pwd && ls"]
+
+        volumeMounts:
+        - name: my-volume
+          mountPath: /go/src/app
+        ports:
+          - containerPort: 1323
       volumes:
       - name: my-volume
         hostPath:
-          path: /cmd
+          path: /home/shoma/zi/zissyu/k8s/cmd/hello/
+
