@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: goapp
+  name: goapp
+spec:
+  ports:
+  - port: 1323
+    protocol: TCP
+    targetPort: 1323
+  selector:
+    app: goapp
+  type: NodePort
+status:
+  loadBalancer: {}
